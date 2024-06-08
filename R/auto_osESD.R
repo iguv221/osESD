@@ -10,6 +10,8 @@
 #' @param parameters
 #' @param weights
 #' @param min_max_switch
+#'
+#' @return
 auto_osESD <- function(data, labeled=FALSE, parameter_learning_length=0.2,
                        parameters=parse_args(OptionParser(option_list = list())), weights=c(0, 0, 1, 0), min_max_switch=FALSE) {
 

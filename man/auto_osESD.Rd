@@ -13,6 +13,9 @@ auto_osESD(
   min_max_switch = FALSE
 )
 }
+\arguments{
+\item{min_max_switch}{}
+}
 \description{
 Title
 }
