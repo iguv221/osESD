@@ -4,14 +4,14 @@
 
 #' Title
 #'
-#' @param data
-#' @param labeled
-#' @param parameter_learning_length
-#' @param parameters
-#' @param weights
-#' @param min_max_switch
+#' @param data, dataset used for anomaly detection. x label 'value', y label 'anomaly'
+#' @param labeled, TRUE for supervised learning, FALSE for unsupervised learning
+#' @param parameter_learning_length, length for initiating tuning, default 20%
+#' @param parameters, parameters, either list or parse arguments
+#' @param weights, list of weights for scoring, (precision, recall, f1-score, time)
+#' @param min_max_switch, TRUE for only minimum and maximum values in parameters, FALSE for full parameters
 #'
-#' @return
+#' @return indices of anomalies
 #' @export
 auto_osESD <- function(data, labeled=FALSE, parameter_learning_length=0.2,
                        parameters=parse_args(OptionParser(option_list = list())), weights=c(0, 0, 1, 0), min_max_switch=FALSE) {

@@ -16,7 +16,29 @@ osESD(
 )
 }
 \arguments{
-\item{visualize}{}
+\item{size, }{size of offline initiating set}
+
+\item{dwin, }{size of change rate trend vector}
+
+\item{rwin, }{size of residual rate vector}
+
+\item{maxr, }{maximum R in sequential ESD}
+
+\item{alpha, }{alpha for lambda threshold}
+
+\item{condition, }{TRUE for and, FALSE for or}
+
+\item{visualize, }{TRUE for plot export, FALSE for only results
+#' \dontrun{
+data("A3Benchmark_TS4") # Load the dataset
+ex_osESD_anoms <- osESD(data=A3Benchmark_TS4, size=100)
+print(ex_osESD_anoms)
+}}
+
+\item{dataset, }{dataset used for anomaly detection. x label 'value', y label 'anomaly'}
+}
+\value{
+indices of anomalies
 }
 \description{
 Title

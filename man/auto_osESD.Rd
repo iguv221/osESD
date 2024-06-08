@@ -14,7 +14,20 @@ auto_osESD(
 )
 }
 \arguments{
-\item{min_max_switch}{}
+\item{data, }{dataset used for anomaly detection. x label 'value', y label 'anomaly'}
+
+\item{labeled, }{TRUE for supervised learning, FALSE for unsupervised learning}
+
+\item{parameter_learning_length, }{length for initiating tuning, default 20%}
+
+\item{parameters, }{parameters, either list or parse arguments}
+
+\item{weights, }{list of weights for scoring, (precision, recall, f1-score, time)}
+
+\item{min_max_switch, }{TRUE for only minimum and maximum values in parameters, FALSE for full parameters}
+}
+\value{
+indices of anomalies
 }
 \description{
 Title
