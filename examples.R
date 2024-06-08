@@ -6,17 +6,24 @@ getwd()
 
 
 library(devtools)
-devtools::install_github("iguv221/osESD",force=TRUE)
+install_github("iguv221/osESD",force=TRUE)
 library(osESD)
 
-osESD
-auto_osESD
+data(A3Benchmark_TS79)
+data(ARIMA5_quad_2)
 
-osESD_df1 <- data(A3Benchmark_TS79)
+osESD_df1 <- A3Benchmark_TS79
 
-osESD_df1
+ex_osESD_anoms<-osESD(data=ARIMA_df,size=100)
+ex_osESD_anoms
 
-length(osESD_df1)
+ARIMA_df <- ARIMA5_quad_2
+
+
+
+
+
+
 
 
 
