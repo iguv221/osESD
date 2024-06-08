@@ -15,30 +15,82 @@
 
 # install.packages('R6')
 
+# rm(list=ls())
+# library(devtools)
+# library(roxygen2)
+# setwd("C:/Users/jisung/OneDrive - 연세대학교 (Yonsei University)/문서/osESD/R")
+# getwd()
+#
+#
+# # roxygenize()
+#
+#
+# document()
+# check()
+# build()
+
+
+
 rm(list=ls())
-library(devtools)
-library(roxygen2)
-setwd("C:/Users/jisung/OneDrive - 연세대학교 (Yonsei University)/문서/osESD/R")
+setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 getwd()
 
 
-# roxygenize()
+library(devtools)
+devtools::install_github("iguv221/osESD",force=TRUE)
+
+osESD
+auto_osESD
 
 
-document()
-check()
-build()
+dir_path <- "osESD_results//"
+if (!file.exists(dir_path)) {
+  dir.create(dir_path)
+  cat("Directory created:", dir_path, "\n")
+} else {
+  cat("Directory already exists:", dir_path, "\n")
+}
+
+data_name<-'A2_44'
+labeled <- TRUE
+size<-100
+ex_data<-read.csv('A2Benchmark_synthetic_1.csv')
+ts.plot(ex_data$value)
+
+t1 <- Sys.time()
+## In this example basic parameters are used. These can be adjusted accordingly to the explanations provided in our paper.
+ex_osESD_anoms<-osESD(data=ex_data,size=size)
+t2 <- Sys.time()
+ex_osESD_anoms
+
+if (labeled){
+  true_outlier<-as.factor(ex_data$anomaly[(size+1):length(ex_data$value)])
+  pred_outlier <- rep(0, length(true_outlier))
+  for (anom_index in ex_osESD_anoms) {
+    pred_outlier[anom_index-size] <- 1
+  }
+  pred_outlier <- as.factor(pred_outlier)
+  values <- PRFTcalculator(true_outlier, pred_outlier, t1,t2)
+}
+
+### Write output text file.
+Output<-paste0("\nPrecision : ",values$precision,", Recall : ",values$recall,", F1-score : ",values$F1Score,", Time : ",values$Run_Time," (sec)\n\n",
+               "Real : [ ", paste(as.character(which(ex_data$anomaly==1)),collapse=", "), " ]\n\n",
+               "Anomalies : [ ", paste(as.character(ex_osESD_anoms),collapse=", "), " ]")
+file_path <- paste0(dir_path,data_name,"_osESD_result.txt")
+writeLines(Output, file_path)
+
+### Draw plot with anomalies.
+if (TRUE){
+  png(file=paste0(paste0(Starting_point,"//",dir_path,gsub("//.csv", "", data_name),"_osESD_result",".png")), width = 1100, height = 800)
+  plot.ts(ex_data$value, main=sprintf(paste0("Detected Anomalies on ", gsub("//.csv", "", data_name)," with osESD")))
+  points(ex_osESD_anoms, ex_data$value[ex_osESD_anoms], col="red")
+  dev.off()
+}
+
+cat(Output)
 
 
-#
-# rm(list=ls())
-# setwd(dirname(rstudioapi::getSourceEditorContext()$path))
-#
-# library(devtools)
-#
-# install_github('https://github.com/iguv221/testing_testing',force=TRUE)
-#
-# iguv_testing_calculator(5,6,1)
 
 
 

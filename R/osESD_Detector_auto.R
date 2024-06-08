@@ -1,9 +1,12 @@
 
+library(optparse)
+
 osESD_Detector_auto <- function(database, data_label, weights, par_len, parameters, min_max_switch) {
 
   if(sum(weights)<=0){
     stop("Weight value must be above 0.")
   }
+
   weights<-weights/sum(weights)
   if (length(parameters)==1){
     print("No parameters found for input, will use basic default parameter set")
