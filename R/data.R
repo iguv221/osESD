@@ -26,7 +26,7 @@
 #'   \item{value}{\code{numeric} Values of the time series.}
 #'   \item{label}{\code{integer} Labels indicating anomalies (1 if anomaly, 0 otherwise).}
 #' }
-#' @source Yahoo benchmark dataset
+#' @source ARIMA dataset
 #' @keywords datasets
 "ARIMA3_lin_4"
 
@@ -37,7 +37,7 @@
 #'   \item{value}{\code{numeric} Values of the time series.}
 #'   \item{label}{\code{integer} Labels indicating anomalies (1 if anomaly, 0 otherwise).}
 #' }
-#' @source Yahoo benchmark dataset
+#' @source ARIMA dataset
 #' @keywords datasets
 "ARIMA5_quad_2"
 
@@ -49,7 +49,7 @@
 #'   \item{value}{\code{numeric} Values of the time series.}
 #'   \item{label}{\code{integer} Labels indicating anomalies (1 if anomaly, 0 otherwise).}
 #' }
-#' @source Yahoo benchmark dataset
+#' @source Seasonal dataset
 #' @keywords datasets
 "seasonal_ber_16"
 
@@ -61,7 +61,7 @@
 #'   \item{value}{\code{numeric} Values of the time series.}
 #'   \item{label}{\code{integer} Labels indicating anomalies (1 if anomaly, 0 otherwise).}
 #' }
-#' @source Yahoo benchmark dataset
+#' @source Seasonal dataset
 #' @keywords datasets
 "seasonal_ber_21"
 
