@@ -1,0 +1,44 @@
+
+# rm(list=ls())
+# library(devtools)
+# library(roxygen2)
+# setwd("C:/Users/jisung/OneDrive - 연세대학교 (Yonsei University)/문서/testing")
+# getwd()
+#
+#
+#
+#
+# roxygenize()
+#
+# check()
+# build()
+
+# install.packages('R6')
+
+rm(list=ls())
+library(devtools)
+library(roxygen2)
+setwd("C:/Users/jisung/OneDrive - 연세대학교 (Yonsei University)/문서/osESD/R")
+getwd()
+
+
+# roxygenize()
+
+
+document()
+check()
+build()
+
+
+#
+# rm(list=ls())
+# setwd(dirname(rstudioapi::getSourceEditorContext()$path))
+#
+# library(devtools)
+#
+# install_github('https://github.com/iguv221/testing_testing',force=TRUE)
+#
+# iguv_testing_calculator(5,6,1)
+
+
+

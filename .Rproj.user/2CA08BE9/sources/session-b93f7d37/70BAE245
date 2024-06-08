@@ -1,0 +1,26 @@
+{
+    "id": "70BAE245",
+    "path": "~/osESD/R/osESD_modules.R",
+    "project_path": "R/osESD_modules.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1717814788276.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "14,40",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1717815262,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1717815262727,
+    "read_only": false,
+    "read_only_alternatives": []
+}
