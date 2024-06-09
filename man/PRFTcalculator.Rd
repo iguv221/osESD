@@ -21,6 +21,3 @@ precision, recall, f1score, and run time of run method
 \description{
 Title
 }
-\examples{
-PRFTcalculator(true_outlier, pred_outlier, t1,t2)
-}

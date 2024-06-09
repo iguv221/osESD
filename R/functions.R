@@ -1,37 +1,3 @@
-# Function to parse arguments and mark the list
-parse_and_mark <- function(parser) {
-  args <- parse_args(parser)
-  attr(args, "parsed") <- TRUE
-  return(args)
-}
-
-# Check function to determine if a list is from parse_args
-is_parsed_args <- function(x) {
-  is.list(x) && !is.null(attr(x, "parsed"))
-}
-
-
-convert_params_to_parsed_args <- function(custom_params) {
-  allowed_params <- c("WindowSizes", "AndOr", "MaxRs", "Dwins", "Rwins", "Alphas", "help")
-  if (is_parsed_args(custom_params)){
-    param_names <- gsub("^--", "", names(custom_params))
-    if (!all(param_names %in% allowed_params)) {
-      stop("One or more parameter names from parsed arguments are not allowed. Allowed names are: ", paste(allowed_params, collapse=", "))
-    }
-    return (custom_params)
-  }
-
-  if (!all(names(custom_params) %in% allowed_params)) {
-    stop("One or more parameter names are not allowed. Allowed names are: ", paste(allowed_params, collapse=", "))
-  }
-  option_list <- lapply(names(custom_params), function(key) {
-    default_value = unlist(custom_params[[key]])
-    make_option(c(sprintf("--%s", key)), type="double", default=default_value, action="store")
-  })
-  opt_parser <- OptionParser(option_list = option_list)
-  parsed_params <- parse_args(opt_parser, args = character())
-  return(parsed_params)
-}
 
 
 timestamp_creator <- function(data) {
@@ -53,8 +19,6 @@ timestamp_creator <- function(data) {
 #'
 #' @return precision, recall, f1score, and run time of run method
 #' @export
-#'
-#' @examples PRFTcalculator(true_outlier, pred_outlier, t1,t2)
 PRFTcalculator <- function(Reals, Preds, t1, t2) {
   TP <- 0
   TN <- 0

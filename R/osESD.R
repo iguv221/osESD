@@ -4,13 +4,10 @@ library(optparse);
 library(tcltk);
 library(reticulate)
 
-# setwd(dirname(rstudioapi::getSourceEditorContext()$path))
-print(getwd())
 
-source("R//osESD_modules.R")
-source("R//osESD_Detector_auto.R")
-source("R//functions.R")
-source("R//data_functions.R")
+# source("R//osESD_modules.R")
+# source("R//functions.R")
+# source("R//data_functions.R")
 
 
 #' Title

@@ -2,7 +2,7 @@
 % Please edit documentation in R/auto_osESD.R
 \name{auto_osESD}
 \alias{auto_osESD}
-\title{Title}
+\title{title}
 \usage{
 auto_osESD(
   data,
@@ -14,21 +14,21 @@ auto_osESD(
 )
 }
 \arguments{
-\item{data, }{dataset used for anomaly detection. x label 'value', y label 'anomaly'}
+\item{data, }{dataset used for anomaly detection. x label 'value', y label 'anomaly' .}
 
-\item{labeled, }{TRUE for supervised learning, FALSE for unsupervised learning}
+\item{labeled, }{TRUE for supervised learning, FALSE for unsupervised learning .}
 
-\item{parameter_learning_length, }{length for initiating tuning, default 20%}
+\item{parameter_learning_length, }{length for initiating tuning, default 0.2 .}
 
-\item{parameters, }{parameters, either list or parse arguments}
+\item{parameters, }{parameters, either list or parse arguments .}
 
-\item{weights, }{list of weights for scoring, (precision, recall, f1-score, time)}
+\item{weights, }{list of weights for scoring, (precision, recall, f1-score, time).}
 
-\item{min_max_switch, }{TRUE for only minimum and maximum values in parameters, FALSE for full parameters}
+\item{min_max_switch, }{TRUE for only minimum and maximum values in parameters, FALSE for full parameters .}
 }
 \value{
-indices of anomalies
+indices of anomalies .
 }
 \description{
-Title
+title
 }
