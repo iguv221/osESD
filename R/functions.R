@@ -51,10 +51,10 @@ timestamp_creator <- function(data) {
 #' @param t1, starting time
 #' @param t2, ending time
 #'
-#' @return
+#' @return precision, recall, f1score, and run time of run method
 #' @export
 #'
-#' @examples
+#' @examples PRFTcalculator(true_outlier, pred_outlier, t1,t2)
 PRFTcalculator <- function(Reals, Preds, t1, t2) {
   TP <- 0
   TN <- 0

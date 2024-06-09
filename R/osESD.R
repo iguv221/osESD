@@ -9,8 +9,8 @@ print(getwd())
 
 source("R//osESD_modules.R")
 source("R//osESD_Detector_auto.R")
-source("R//modules//functions.R")
-source("R//modules//data_functions.R")
+source("R//functions.R")
+source("R//data_functions.R")
 
 
 #' Title
