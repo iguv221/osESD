@@ -20,7 +20,7 @@ convert_params_to_parsed_args <- function(custom_params) {
     }
     return (custom_params)
   }
-  
+
   if (!all(names(custom_params) %in% allowed_params)) {
     stop("One or more parameter names are not allowed. Allowed names are: ", paste(allowed_params, collapse=", "))
   }
@@ -44,6 +44,17 @@ timestamp_creator <- function(data) {
   return (list('timestamps'=time, 'value'=data$value, 'anomaly'=data$anomaly))
 }
 
+#' Title
+#'
+#' @param Reals, indices of real anomalies
+#' @param Preds, indices of predicted anomalies
+#' @param t1, starting time
+#' @param t2, ending time
+#'
+#' @return
+#' @export
+#'
+#' @examples
 PRFTcalculator <- function(Reals, Preds, t1, t2) {
   TP <- 0
   TN <- 0
